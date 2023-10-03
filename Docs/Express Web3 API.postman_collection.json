@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "6424b0e3-0153-4a0a-bc5f-e3423fb9f747",
+		"name": "Express Web3 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17057862"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/ping"
+			},
+			"response": []
+		},
+		{
+			"name": "confirmBuyer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/confirmBuyer?from={{buyer}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"confirmBuyer"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{buyer}}",
+							"description": "buyer"
+						},
+						{
+							"key": "value",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmSeller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/confirmSeller?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"confirmSeller"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deposit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/deposit?from={{seller}}&value=59&privateKey={{seller_private_key}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						},
+						{
+							"key": "value",
+							"value": "59"
+						},
+						{
+							"key": "privateKey",
+							"value": "{{seller_private_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmTransfer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/confirmTransfer?from={{buyer}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"confirmTransfer"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{buyer}}"
+						},
+						{
+							"key": "from",
+							"value": "{{seller}}",
+							"disabled": true
+						},
+						{
+							"key": "from",
+							"value": "{{distributor}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initTransfer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/initTransfer?from={{buyer}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"initTransfer"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{buyer}}"
+						},
+						{
+							"key": "from",
+							"value": "{{seller}}",
+							"disabled": true
+						},
+						{
+							"key": "from",
+							"value": "{{distributor}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setDistributor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\": \"{{distributor}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/setDistributor?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setDistributor"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setItemValue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\": \"7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/setItemValue?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setItemValue"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setRewardValue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/setRewardValue?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setRewardValue"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setStakeValue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\":\"5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/setStakeValue?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setStakeValue"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setTransferState",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\":false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/setTransferState?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setTransferState"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setValid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/setValid?from={{seller}}&valid=false&privateKey=0x61dced5af778942996880120b303fc11ee28cc8e5036d2fdff619b5675ded3f0",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"setValid"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						},
+						{
+							"key": "valid",
+							"value": "false"
+						},
+						{
+							"key": "privateKey",
+							"value": "0x61dced5af778942996880120b303fc11ee28cc8e5036d2fdff619b5675ded3f0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/getTokens?from=0x73fA63E4B79218dB593c523952827AB5B918363F",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getTokens"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "0x73fA63E4B79218dB593c523952827AB5B918363F"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/getBalance?address=0x606D9EafEBdBa689162F97712fF673440b3217Be",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getBalance"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "0x606D9EafEBdBa689162F97712fF673440b3217Be"
+						},
+						{
+							"key": "",
+							"value": "0x24F4f422D3C122247365D2b7862Ffe341B1B716B",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBalanceOf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/getBalanceOf?from=0x73fA63E4B79218dB593c523952827AB5B918363F",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getBalanceOf"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "0x73fA63E4B79218dB593c523952827AB5B918363F"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustodian",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/getCustodian?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getCustodian"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDistributor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/getDistributor?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getDistributor"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getItemValue"
+			},
+			"response": []
+		},
+		{
+			"name": "getRewardValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getRewardValue"
+			},
+			"response": []
+		},
+		{
+			"name": "getStakeValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getStakeValue"
+			},
+			"response": []
+		},
+		{
+			"name": "getTransferState",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getTransferState"
+			},
+			"response": []
+		},
+		{
+			"name": "getValid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getValid"
+			},
+			"response": []
+		},
+		{
+			"name": "nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/nodes?from={{seller}}",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"nodes"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "{{seller}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getValues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getValues"
+			},
+			"response": []
+		},
+		{
+			"name": "start",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base}}/getValues"
+			},
+			"response": []
+		},
+		{
+			"name": "Deploy",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "buyer",
+			"value": "0x710e054CC6d8b38C64b57da4dF0411A2428D5c56",
+			"type": "string"
+		},
+		{
+			"key": "seller",
+			"value": "0xaa70e8c7d91133C299Ef7A3dDA7804634f1e17B7",
+			"type": "string"
+		},
+		{
+			"key": "distributor",
+			"value": "0x4d3f5993E8bc43305152adF688dBbB90EA7462DF",
+			"type": "string"
+		},
+		{
+			"key": "buyer_private_key",
+			"value": "0x8bbbb1b345af56b560a5b20bd4b0ed1cd8cc9958a16262bc75118453cb546df7",
+			"type": "string"
+		},
+		{
+			"key": "seller_private_key",
+			"value": "0x61dced5af778942996880120b303fc11ee28cc8e5036d2fdff619b5675ded3f0",
+			"type": "string"
+		},
+		{
+			"key": "distributor_private_key",
+			"value": "0x4762e04d10832808a0aebdaa79c12de54afbe006bfffd228b3abcc494fe986f9",
+			"type": "string"
+		}
+	]
+}

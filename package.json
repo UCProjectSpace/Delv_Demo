@@ -1,0 +1,12 @@
+{
+  "name": "supply_chain",
+  "version": "1.0.0",
+  "description": "This is a Remix backup file. This zip should be used by the restore backup tool in Remix. The .workspaces directory contains your workspaces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd client && npm start && cd ../server && node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+title Supply Chain Demo
+
+participant System
+participant Seller
+participant Distributor_1
+participant Distributor_2
+participant Distributor_3
+
+participant Buyer
+
+
+System<-Buyer:purchase item
+System<-Distributor_1:Stake
+System<-Distributor_2:Stake
+System<-Distributor_3:Stake
+Seller->Distributor_1:transfer item
+System<-Distributor_1:Scan item
+System->System:Set Distributor_1 as custodian
+System<-Distributor_1:Scan item
+System->Distributor_1:stake
+Distributor_1->Distributor_2:Transfer item
+System<-Distributor_2:Scan item
+System->System:Set Distributer_2 as custodian
+System<-Distributor_2:Scan item
+System->Distributor_2:Stake
+Distributor_2->Distributor_3:Transfer item
+System<-Distributor_3:Scan item
+System->System:Set Distributor_3 as custodian
+System<-Distributor_3:Scan item
+System->Distributor_3:Stake
+Distributor_3->Buyer:Transfer item
+System<-Buyer:Complete transaction

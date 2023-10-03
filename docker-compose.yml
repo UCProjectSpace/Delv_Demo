@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    container_name: api
+    restart: always
+    ports:
+      - $API_PORT:$API_PORT
+    environment:
+      PORT: $API_PORT
+      WEB3_PROVIDER: $WEB3_PROVIDER
+      BUYER_ADDRESS: $BUYER_ADDRESS
+      SELLER_ADDRESS: $SELLER_ADDRESS
+      DISTRIBUTOR_ADDRESS: $DISTRIBUTOR_ADDRESS
+      CONTRACT_NAME: $CONTRACT_NAME
+      CONTRACT_ADDRESS: $CONTRACT_ADDRESS
+    networks:
+      - app-network
+    command: node ./index.js
+  client:
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+      args:
+        REACT_APP_BASEURL: $REACT_APP_BASEURL
+        REACT_APP_BUYER_ADDRESS: $REACT_APP_BUYER_ADDRESS
+        REACT_APP_SELLER_ADDRESS: $REACT_APP_SELLER_ADDRESS
+        REACT_APP_DISTRIBUTOR_ADDRESS: $REACT_APP_DISTRIBUTOR_ADDRESS
+        REACT_APP_CONTRACT_ADDRESS: $CONTRACT_ADDRESS
+    container_name: client
+    restart: always
+    ports:
+      - $CLIENT_PORT:$CLIENT_PORT
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
